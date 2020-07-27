@@ -1,4 +1,4 @@
-import { RequestResponse } from "../serverInterface";
+import { RequestResponse } from "../protocols/serverInterface";
 
 export class UsersController {
     async getUser(query: any): Promise<RequestResponse> {
