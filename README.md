@@ -7,35 +7,44 @@ This project is a Proof of Concept for a implementation of a NodeJs Typescript a
 infrastructure
     api
         express
-            routes
-                userRoutes.ts
-            init.ts
-    db 
+            serverExpress.ts (implementation of ServerInterface)
+    persistence 
         mongodb
             driver.ts
             repositories
-                UserRepositoryMongo.ts
+                userRepositoryMongo.ts
         postgres
             driver.ts
             repositories
-                ConfigurationsRepositoryPG.ts
+                configurationsRepositoryPG.ts
+        memory
+            repositories
+                usersRepositoryMemory.ts (implementation of UsersRepositoryInterface)
 interfaces
-    controllers
-        userController.ts
-    middlewares
-application
+    api
+        controllers
+            usersController.ts
+        middlewares
+        protocols
+            serverInterface.ts
+            setupRouteInterface.ts
+        routes
+            userRoute.ts (implementation of SetupRouteInterface)
+        index.ts
+    cmd
+domain
     user
-        domain
-            UserEntity.ts
-            ConfigurationsEntity.ts
+        entities
+            userEntity.ts
+            configurationsEntity.ts
         repositories (DAL / DAO)
-            UserRepositoryInterface.ts
-            ConfigurationsRepositoryInterface.ts
+            userRepositoryInterface.ts
+            configurationsRepositoryInterface.ts
         useCases
             userCreate
-                UserCreateService.ts
-                UserCreateService.spec.ts
-                UserCreateValidatorInterface.ts
-                UserCreate.in.ts
-                UserCreate.out.ts
+                userCreateService.ts
+                userCreateService.spec.ts
+                userCreateValidatorInterface.ts
+                userCreate.in.ts
+                userCreate.out.ts
 ```

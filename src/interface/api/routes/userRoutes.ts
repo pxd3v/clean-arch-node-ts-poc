@@ -1,11 +1,11 @@
 import { SetupRouteInterface } from "../protocols/setupRouteInterface";
 import { ServerInterface, RequestMethod } from "../protocols/serverInterface";
-import { UsersController } from "../controllers/usersControllers";
+import { UserContainer } from "../container/userContainer";
 
 export class UserSetupRoutes implements SetupRouteInterface {
     setupRoute(server: ServerInterface) {
-        const usersController = new UsersController();
-        server.addEndpoint(RequestMethod.GET, "/users", async ({ query }) => usersController.getUser(query));
+        const usersController = UserContainer.getController();
+        server.addEndpoint(RequestMethod.GET, "/users", async () => usersController.getUser());
         server.addEndpoint(RequestMethod.POST, "/users", async ({ body }) => usersController.postUser(body));
     }
 }
