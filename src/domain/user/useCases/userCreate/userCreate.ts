@@ -1,4 +1,4 @@
-import { UsersRepositoryInterface } from "../../repositories/usersRepositoryInterface";
+import { UsersRepositoryInterface } from "../../repositories/models/usersRepositoryInterface";
 import { User } from "../../entities/user";
 import { UserCreateEntry } from "./userCreateEntry";
 

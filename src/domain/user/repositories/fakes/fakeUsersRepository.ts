@@ -1,7 +1,7 @@
-import { UsersRepositoryInterface } from "../../../../domain/user/repositories/models/usersRepositoryInterface";
-import { User } from "../../../../domain/user/entities/user";
+import { UsersRepositoryInterface } from "../models/usersRepositoryInterface";
+import { User } from "../../entities/user";
 
-export class UsersRepositoryMemory implements UsersRepositoryInterface {
+export class FakeUsersRepository implements UsersRepositoryInterface {
     private users: User[];
     private increment: number;
 

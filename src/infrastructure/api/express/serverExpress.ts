@@ -9,7 +9,7 @@ import {
 
 export class ServerExpress implements ServerInterface {
   private expressServer: express.Express;
-
+  
   constructor() {
     this.expressServer = express();
     this.expressServer.use(bodyParser.json());
